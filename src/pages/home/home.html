@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list>
+      <ion-item>
+        <ion-label floating>Phone Number</ion-label>
+        <ion-input type="text" #phone></ion-input>
+      </ion-item>
+  </ion-list>
+  
+  <div class="row">
+    <div class="col col-10"></div>
+    <div class="col col-center">      
+      <button ion-button outline icon-start (click)="checkInOut('create')">
+        <ion-icon name="sunny" is-active="false"></ion-icon>
+        &nbsp; &nbsp;Check In
+      </button>
+    </div>
+    <div class="col col-center">
+      <button ion-button icon-start (click)="checkInOut('update')">
+        Check Out&nbsp; &nbsp;
+        <ion-icon name="partly-sunny" is-active="false"></ion-icon>
+      </button>
+    </div>
+    <div class="col col-center"></div>
+  </div>
+  <br><br>
+  <div class="row" style="background:#28a8f1;">
+      <div class="col col-10"></div>
+      <div class="col col-center"><h5>Name</h5></div>
+      <div class="col col-center"><h5>In</h5></div>
+      <div class="col col-center"><h5>Out</h5></div>
+      <!-- <div class="col col-20"></div> -->
+  </div>
+  <ion-grid *ngFor="let user of userList" style="background:#7ec7f1;"> 
+    <ion-row align-items-center>
+      <ion-col style="background: #b8fc98;" class="col col-10">&nbsp;</ion-col>
+      <ion-col style="background: #b8fc98;">{{user.name}}</ion-col>
+      <ion-col style="background: #b8fc98;">{{user.timin}}</ion-col>
+      <ion-col style="background: #b8fc98;">{{user.timout}}</ion-col>
+      <!-- <ion-col style="background: #b8fc98;">&nbsp;</ion-col> -->
+    </ion-row>
+  </ion-grid>
+</ion-content>
